@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: redirect('/users/sign_in')
   # Routes for the Delivery resource:
-
   # CREATE
   post("/insert_delivery", { :controller => "deliveries", :action => "create" })
 
@@ -23,4 +21,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root 'deliveries#index'
 end
